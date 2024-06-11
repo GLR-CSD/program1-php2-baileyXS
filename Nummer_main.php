@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 session_start();
 
 // Haal de eventuele fouten en formulier waarden op uit de sessie
@@ -10,10 +11,10 @@ unset($_SESSION['errors']);
 unset($_SESSION['formValues']);
 
 require_once 'db.php';
-require_once 'classes/Persoon.php';
+require_once 'classes/Nummer.php';
 
 // Haal alle personen op uit de database
-$personen = Persoon::getAll($db);
+$nummers = Nummer::getAll($db);
 
 // Laad de view
-include 'views/index_view.php';
+include 'views/Nummer_view.php';
